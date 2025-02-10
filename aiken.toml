@@ -1,4 +1,4 @@
-name = "Mavis2103/debug"
+name = "mavis/debug"
 version = "0.0.0"
 compiler = "v1.1.4"
 plutus = "v3"
