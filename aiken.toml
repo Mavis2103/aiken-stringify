@@ -6,7 +6,7 @@ license = "Apache-2.0"
 description = "Aiken contracts for project 'Mavis2103/debug'"
 
 [repository]
-user = "Mavis2103"
+user = "mavis"
 project = "debug"
 platform = "github"
 
