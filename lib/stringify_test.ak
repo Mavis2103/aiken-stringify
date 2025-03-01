@@ -117,7 +117,7 @@ test log_tx() {
         output: Output {
           value: assets.from_lovelace(2_000_000),
           address: Address {
-            payment_credential: VerificationKey("public_key"),
+            payment_credential: VerificationKey("pk"),
             stake_credential: Some(Inline(VerificationKey("stake_key"))),
           },
           datum: NoDatum,
