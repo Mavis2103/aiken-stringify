@@ -1,6 +1,6 @@
 name = "Mavis2103/debug"
-version = "v0.0.1"
-compiler = "v1.1.4"
+version = "v0.0.2"
+compiler = "v1.1.17"
 plutus = "v3"
 license = "Apache-2.0"
 description = "Aiken contracts for project 'Mavis2103/debug'"
@@ -12,7 +12,7 @@ platform = "github"
 
 [[dependencies]]
 name = "aiken-lang/stdlib"
-version = "v2"
+version = "v3"
 source = "github"
 
 [config]

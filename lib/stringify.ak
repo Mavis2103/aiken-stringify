@@ -51,7 +51,7 @@ pub fn out_ref(self: OutputReference) {
 }
 
 fn do_out_ref(self: OutputReference) {
-  let OutputReference(tx_hash, index) = self
+  let OutputReference { transaction_id: tx_hash, output_index: index } = self
   @"OutputReference(TransactionId({}), {})"
     |> apply_params(
         [
@@ -136,7 +136,9 @@ pub fn output(self: Output) {
 
 fn do_output(self: Output) {
   @"Output {\naddress: {},\nvalue: {},\ndatum: {}\n}"
-    |> apply_params([address(self.address), value(self.value), datum(self.datum)])
+    |> apply_params(
+        [address(self.address), value(self.value), datum(self.datum)],
+      )
 }
 
 pub fn input(self: Input) {
@@ -178,7 +180,7 @@ fn do_redeemers(self: Pairs<ScriptPurpose, Redeemer>) {
               stake_credential(Some(Inline(cred))) |> with_parentheses,
             )
           // TODO
-          Publish(0, cert) ->
+          Publish { at: 0, certificate: cert } ->
             string.concat(@"Publish", cbor.diagnostic(cert) |> with_parentheses)
           _ -> fail
         }
@@ -484,7 +486,8 @@ fn do_format_cbor(bytes) {
             )
           } else if chr == "_" {
             (
-              builder //  |> pop_back(level + 1)
+              builder
+                //  |> pop_back(level + 1)
                 |> newline,
               level,
               has_token,
