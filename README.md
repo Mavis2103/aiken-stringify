@@ -116,4 +116,4 @@ let input = Input {
 
 ## License
 
-MIT
+Apache-2.0
